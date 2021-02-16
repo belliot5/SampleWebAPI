@@ -6,3 +6,7 @@ install:
 script:
   - msbuild /p:Configuration=Release SampleWebAPI.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
+
+deploy:
+  provider: azure_web_apps
+  verbose: true 
