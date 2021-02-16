@@ -2,7 +2,7 @@ language: csharp
 solution: SampleWebAPI.sln
 install:
   - nuget restore SampleWebAPI.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release SampleWebAPI.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./SampleWebAPITests/bin/Release/SampleWebAPITests.dll
